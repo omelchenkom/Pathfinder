@@ -17,8 +17,8 @@ bool is_next(t_App *app, t_stack *st, int next) {
 
 void restore_path_Helper(t_App *app, t_stack *st) {
     // base case
-    if (get_from_stack(st) == st->path[0]) { 
-        print_path_info(app, st);             
+    if (get_from_stack(st) == st->path[0]) {
+        print_path_info(app, st);
         return;
     }
     else { // recursive case

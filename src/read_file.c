@@ -1,5 +1,7 @@
 #include "header.h"
 
+static void check_line_n(char *str, t_App *app);
+
 char *read_file(char *argv[], t_App *app) {
     app->file_name = argv[1];
     // Check if file exists
@@ -16,6 +18,26 @@ char *read_file(char *argv[], t_App *app) {
     if (mx_strlen(str) == 0) {
         cast_error_message(File_Is_Empty, app);
     }
+
+    check_line_n(str, app);
     return str;
+}
+
+static void check_line_n(char *str, t_App *app) {
+
+    if (str[0] == '\n')
+        cast_error_message(Line1_isnt_valid, app);
+
+    int j  = 0;
+    for(int i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] == '\n')
+            j++;
+        if (str[i] == '\n' && str[i + 1] == '\n')
+        {
+            app->k  = j + 1;
+            break;
+        }
+    }
 }
 

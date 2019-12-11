@@ -6,19 +6,13 @@ static void print_path(t_App *app, t_stack *st);
 static void print_route(t_App *app, t_stack *st);
 
 void print_path_info(t_App *app, t_stack *st) {
-    static bool first_line = true;
-    if (first_line) {
-        first_line = false;
-    }
-    else {
-        mx_printstr("\n");
-    }
     print_line();
     mx_printstr("\n");
     print_path(app, st);
     print_route(app, st);
     print_distance(app, st);
     print_line();
+    mx_printstr("\n");
 }
 
 static char *get_name_by_id(int i, t_App *app) {

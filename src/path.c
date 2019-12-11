@@ -13,7 +13,7 @@ void make_allpaths_and_print(t_App *app) {
 }
 
 void init_stack(t_stack **st, t_App *app, int i, int j) {
-    *st = malloc(sizeof(t_stack)); 
+    *st = malloc(sizeof(t_stack));
     if ((*st) == NULL) exit(1);
 
     (*st)->max_size = app->SIZE;
@@ -35,7 +35,7 @@ int pop_from_stack(t_stack *st) {
         st->size--;
         return st->path[st->size + 1];
     }
-    return st->path[1]; // всегда первый элемент не можно убрать.
+    return st->path[1];
 }
 
 int get_from_stack(t_stack *st) {

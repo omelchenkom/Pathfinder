@@ -1,6 +1,6 @@
 #include "header.h"
 
-static void delete_matrix(int *m); 
+static void delete_matrix(int *m);
 
 void free_all( t_App *app) {
     mx_del_strarr(&(app->city));
